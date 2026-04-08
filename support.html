@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Supporto – Powerplan</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: #0f0f1a;
+      color: #e0e0e0;
+      line-height: 1.75;
+      padding: 32px 20px;
+    }
+    .container { max-width: 780px; margin: 0 auto; }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+    .logo-icon {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, #ffd700, #ff8c00);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+    }
+    h1 { font-size: 2rem; color: #ffd700; }
+    .subtitle { color: #9ca3af; font-size: 0.9rem; margin-bottom: 48px; margin-top: 6px; }
+    h2 {
+      font-size: 1.15rem;
+      color: #ffd700;
+      margin: 40px 0 12px;
+      border-left: 3px solid #ffd700;
+      padding-left: 12px;
+    }
+    p { margin-bottom: 14px; font-size: 0.97rem; color: #d1d5db; }
+    ul { margin: 10px 0 14px 24px; }
+    li { margin-bottom: 8px; font-size: 0.97rem; color: #d1d5db; }
+    a { color: #ffd700; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* FAQ */
+    .faq-item {
+      background: #1a1a2e;
+      border: 1px solid #2a2a3e;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      color: #e0e0e0;
+      font-size: 0.97rem;
+      font-family: inherit;
+      text-align: left;
+      padding: 16px 20px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .faq-question:hover { color: #ffd700; }
+    .faq-question .arrow { color: #ffd700; font-size: 0.8rem; transition: transform 0.2s; }
+    .faq-answer {
+      display: none;
+      padding: 0 20px 16px;
+      font-size: 0.93rem;
+      color: #9ca3af;
+      border-top: 1px solid #2a2a3e;
+    }
+    .faq-item.open .faq-answer { display: block; }
+    .faq-item.open .arrow { transform: rotate(180deg); }
+
+    /* Contact card */
+    .contact-card {
+      background: #1a1a2e;
+      border: 1px solid #2a2a3e;
+      border-radius: 12px;
+      padding: 28px;
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .contact-icon { font-size: 2.4rem; }
+    .contact-text h3 { color: #ffd700; font-size: 1rem; margin-bottom: 4px; }
+    .contact-text p { margin: 0; font-size: 0.92rem; color: #9ca3af; }
+    .contact-text a { color: #ffd700; font-weight: 600; }
+
+    footer {
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid #2a2a3e;
+      color: #6b7280;
+      font-size: 0.82rem;
+      text-align: center;
+    }
+    footer a { color: #9ca3af; }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <div class="logo">
+    <div class="logo-icon">💪</div>
+    <div>
+      <h1>Powerplan</h1>
+      <p class="subtitle" style="margin-bottom:0">Personal Trainer App – Supporto</p>
+    </div>
+  </div>
+  <p class="subtitle">Siamo qui per aiutarti. Trova le risposte alle domande più frequenti o contattaci direttamente.</p>
+
+  <!-- FAQ -->
+  <h2>Domande frequenti</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      Come creo un nuovo cliente? <span class="arrow">▼</span>
+    </button>
+    <div class="faq-answer">
+      Dalla schermata principale, tocca il pulsante "+" in alto a destra. Inserisci il nome, le note e le misurazioni iniziali del cliente. Il profilo viene salvato automaticamente nel cloud.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      Come genero e condivido una scheda di allenamento in PDF? <span class="arrow">▼</span>
+    </button>
+    <div class="faq-answer">
+      Entra nel profilo del cliente, vai alla sezione "Scheda", componi gli esercizi desiderati e premi "Genera PDF". Puoi condividerla direttamente via WhatsApp, email o AirDrop.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      Come gestisco i pacchetti lezioni? <span class="arrow">▼</span>
+    </button>
+    <div class="faq-answer">
+      Nella sezione "Pacchetti" del cliente puoi aggiungere un nuovo pacchetto prepagato con numero di lezioni e prezzo. Ogni sessione confermata scala automaticamente il contatore.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      I miei dati sono al sicuro? <span class="arrow">▼</span>
+    </button>
+    <div class="faq-answer">
+      Sì. Tutti i dati sono salvati su Firebase (Google Cloud) con crittografia in transito e a riposo. Puoi accedere con e-mail, Google o Apple ID. Consulta la nostra <a href="https://emiliano86.github.io/powerplan-privacy/">Privacy Policy</a> per i dettagli.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      Ho dimenticato la password. Come la recupero? <span class="arrow">▼</span>
+    </button>
+    <div class="faq-answer">
+      Nella schermata di login tocca "Password dimenticata?" e inserisci la tua email. Riceverai un link per reimpostarla entro pochi minuti.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      Come cancello il mio account e i miei dati? <span class="arrow">▼</span>
+    </button>
+    <div class="faq-answer">
+      Vai in Impostazioni → Profilo → "Elimina account". Tutti i tuoi dati verranno rimossi permanentemente entro 30 giorni. Puoi anche inviare richiesta a <a href="mailto:support@powerplan.app">support@powerplan.app</a>.
+    </div>
+  </div>
+
+  <!-- Contatto -->
+  <h2>Hai ancora bisogno di aiuto?</h2>
+  <p>Scrivi direttamente al nostro team di supporto. Risponderemo entro 24–48 ore nei giorni lavorativi.</p>
+
+  <div class="contact-card">
+    <div class="contact-icon">✉️</div>
+    <div class="contact-text">
+      <h3>Email di supporto</h3>
+      <p>Per segnalazioni, richieste o suggerimenti:<br>
+        <a href="mailto:support@powerplan.app">support@powerplan.app</a>
+      </p>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 Powerplan · <a href="https://emiliano86.github.io/powerplan-privacy/">Privacy Policy</a></p>
+  </footer>
+
+</div>
+
+<script>
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    item.classList.toggle('open');
+  }
+</script>
+</body>
+</html>
